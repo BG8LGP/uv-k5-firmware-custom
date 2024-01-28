@@ -219,7 +219,7 @@ void DisplayRSSIBar(const bool now)
 		+ dBmCorrTable[gRxVfo->Band];
 	
 	char rst[4] = {0};
-	itoa(rssi_dBm, rst, 10);
+	snprintf(rst, sizeof(rst), rssi_dBm);
 	UART_printf("RSSI:",rst);
 	int s0_9 = gEeprom.S0_LEVEL - gEeprom.S9_LEVEL;
 	const uint8_t s_level = MIN(MAX((int32_t)(rssi_dBm - s0_dBm)*100 / (s0_9*100/9), 0), 9); // S0 - S9
