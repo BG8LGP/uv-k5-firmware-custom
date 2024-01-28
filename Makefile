@@ -71,9 +71,9 @@ ENABLE_DOCK                   ?= 0
 ENABLE_SCREEN_DUMP			  ?= 0
 
 #------------------------------------------------------------------------------
-AUTHOR_STRING ?= JOAQUIM
-VERSION_STRING ?= V0.3.1
-PROJECT_NAME := cfw_joaquimorg_oefw_V0.3.1
+AUTHOR_STRING ?= BG8LGP
+VERSION_STRING ?= 0.1.0
+PROJECT_NAME := oefw_get_rssi
 
 BUILD := _build
 BIN := firmware
