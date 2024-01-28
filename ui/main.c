@@ -211,6 +211,8 @@ void DisplayRSSIBar(const bool now)
 	const int16_t s0_dBm   = -gEeprom.S0_LEVEL;                  // S0 .. base level
 	const int16_t rssi_dBm =
 		BK4819_GetRSSI_dBm()
+	UART_printf("RSSI:%4d" ,rssi_dbm);
+	
 #ifdef ENABLE_AM_FIX
 		+ ((gSetting_AM_fix && gRxVfo->Modulation == MODULATION_AM) ? AM_fix_get_gain_diff() : 0)
 #endif
