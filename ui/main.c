@@ -26,6 +26,7 @@
 #include "board.h"
 #include "driver/bk4819.h"
 #include "driver/st7565.h"
+#include "driver/uart.h"
 #include "external/printf/printf.h"
 #include "functions.h"
 #include "helper/battery.h"
@@ -217,7 +218,7 @@ void DisplayRSSIBar(const bool now)
 #endif
 		+ dBmCorrTable[gRxVfo->Band];
 	
-	UART_printf("RSSI:%4d" ,rssi_dbm);
+	UART_printf("RSSI:%4d" ,rssi_dBm);
 	int s0_9 = gEeprom.S0_LEVEL - gEeprom.S9_LEVEL;
 	const uint8_t s_level = MIN(MAX((int32_t)(rssi_dBm - s0_dBm)*100 / (s0_9*100/9), 0), 9); // S0 - S9
 	uint8_t overS9dBm = MIN(MAX(rssi_dBm + gEeprom.S9_LEVEL, 0), 99);
